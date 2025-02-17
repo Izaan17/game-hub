@@ -4,7 +4,6 @@ import { useColorMode } from "./ui/color-mode";
 
 const ColorModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  console.log(colorMode);
 
   return (
     <HStack>
