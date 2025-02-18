@@ -23,7 +23,7 @@ const SortSelector = ({ selectedSortOrder, onSelectSortOrder }: Props) => {
   ];
 
   const currentSortOrder = sortOrders.find(
-    (order) => (order.value = selectedSortOrder)
+    (order) => order.value === selectedSortOrder
   );
   return (
     <MenuRoot>
