@@ -8,15 +8,19 @@ import PlatFormSelector from "./components/PlatFormSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
+import ItemPerPageSelector from "./components/ItemPerPageSelector";
 
 // Todo:
 // - Add ability to click on gamecards to get more information
+// - Add ability to switch pages
+// - Add results per page button
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
   searchText: string;
+  itemsPerPage: number;
 }
 
 function App() {
@@ -62,6 +66,12 @@ function App() {
               selectedSortOrder={gameQuery.sortOrder}
               onSelectSortOrder={(sortOrder) =>
                 setGameQuery({ ...gameQuery, sortOrder })
+              }
+            />
+            <ItemPerPageSelector
+              selectedItemsPerPage={gameQuery.itemsPerPage}
+              onItemsPerPageSelect={(itemsPerPage) =>
+                setGameQuery({ ...gameQuery, itemsPerPage })
               }
             />
           </HStack>
