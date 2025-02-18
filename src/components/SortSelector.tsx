@@ -17,12 +17,12 @@ const SortSelector = () => {
         </Button>
       </MenuTrigger>
       <MenuContent width={1}>
-        <MenuItem value="">Relevance</MenuItem>
-        <MenuItem value="">Date added</MenuItem>
-        <MenuItem value="">Name</MenuItem>
-        <MenuItem value="">Release date</MenuItem>
-        <MenuItem value="">Popularity</MenuItem>
-        <MenuItem value="">Average Rating</MenuItem>
+        <MenuItem value="Relevance">Relevance</MenuItem>
+        <MenuItem value="Date added">Date added</MenuItem>
+        <MenuItem value="Name">Name</MenuItem>
+        <MenuItem value="Release date">Release date</MenuItem>
+        <MenuItem value="Popularity">Popularity</MenuItem>
+        <MenuItem value="Average rating">Average rating</MenuItem>
       </MenuContent>
     </MenuRoot>
   );
