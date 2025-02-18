@@ -33,6 +33,7 @@ const PlatFormSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
             key={platform.id}
             value={platform.name}
             onClick={() => onSelectPlatform(platform)}
+            cursor={"pointer"}
           >
             {platform.name}
           </MenuItem>
