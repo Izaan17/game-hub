@@ -9,6 +9,9 @@ import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
+// Todo:
+// - Add ability to click on gamecards to get more information
+
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
