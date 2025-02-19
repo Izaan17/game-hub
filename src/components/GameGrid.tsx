@@ -4,6 +4,8 @@ import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { GameQuery } from "@/App";
+import GameCardShowCase from "./GameCardShowCase";
+import GameCardWithShowCase from "./GameCardWithShowcase";
 
 interface Props {
   gameQuery: GameQuery;
@@ -34,7 +36,7 @@ const GameGrid = ({ gameQuery }: Props) => {
         ))}
       {data.map((game) => (
         <GameCardContainer key={game.id}>
-          <GameCard game={game} />
+          <GameCardWithShowCase game={game} />
         </GameCardContainer>
       ))}
     </SimpleGrid>

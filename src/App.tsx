@@ -10,11 +10,6 @@ import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 import ItemPerPageSelector from "./components/ItemPerPageSelector";
 
-// Todo:
-// - Add ability to click on gamecards to get more information
-// - Add ability to switch pages
-// - Add results per page button
-
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;

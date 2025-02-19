@@ -6,11 +6,17 @@ import getCroppedImageUrl from "@/services/image-url";
 
 interface Props {
   game: Game;
+  onClick?: () => void;
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ game, onClick }: Props) => {
   return (
-    <Card.Root borderRadius={10} overflow="hidden">
+    <Card.Root
+      borderRadius={10}
+      overflow="hidden"
+      cursor="pointer"
+      onClick={onClick}
+    >
       <Image src={getCroppedImageUrl(game.background_image)} />
       <Card.Body>
         <HStack justifyContent="space-between">
