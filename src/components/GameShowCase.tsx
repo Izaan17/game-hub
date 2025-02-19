@@ -18,7 +18,6 @@ interface Props {
 }
 
 const GameShowCase = ({ game, isOpen, onClose }: Props) => {
-  console.log(game.short_screenshots);
   return (
     <DialogRoot
       open={isOpen}
@@ -32,11 +31,6 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
           <DialogCloseTrigger />
         </DialogHeader>
         <DialogBody>
-          {/* <HStack>
-            {game.short_screenshots.map((screenshots) => (
-              <Image src={screenshots.image} width="300px" />
-            ))}
-          </HStack> */}
           <ImageCarousel
             images={game.short_screenshots.map((ss) => ss.image)}
           />

@@ -2,6 +2,7 @@ import { Box, Image } from "@chakra-ui/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import getCroppedImageUrl from "@/services/image-url";
 
 interface Props {
   images: string[];
@@ -10,10 +11,9 @@ interface Props {
 const ImageCarousel = ({ images }: Props) => {
   const settings = {
     dots: true,
-    centerPadding: "30px",
     infinite: true,
     slidesToShow: 2,
-    slidesToScroll: images.length,
+    slidesToScroll: 1,
     speed: 900,
     cssEase: "ease",
     autoplay: true,
@@ -25,12 +25,8 @@ const ImageCarousel = ({ images }: Props) => {
     <Box margin="30px">
       <Slider {...settings}>
         {images.map((image) => (
-          <Box
-            overflow="hidden"
-            borderColor="gray.450"
-            key={image}
-          >
-            <Image src={image} fit={"cover"} />
+          <Box overflow="hidden" borderColor="gray.450" key={image}>
+            <Image src={getCroppedImageUrl(image)} objectFit={"cover"} />
           </Box>
         ))}
       </Slider>
