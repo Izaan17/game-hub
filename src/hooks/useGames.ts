@@ -1,10 +1,10 @@
-import useData from "./useData";
 import { GameQuery } from "@/App";
+import useFetch from "./useFetch";
+import { Platform } from "./usePlatforms";
 
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
+interface GamesResponse<T> {
+  count: number;
+  results: T[];
 }
 
 export interface Game {
@@ -18,7 +18,7 @@ export interface Game {
 }
 
 const useGames = (gameQuery: GameQuery) =>
-  useData<Game>(
+  useFetch<GamesResponse<Game>>(
     "/games",
     {
       params: {

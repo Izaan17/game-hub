@@ -15,6 +15,7 @@ import {
 import ImageCarousel from "./ImageCarousel";
 import CriticScore from "./CriticScore";
 import PlatFormIconList from "./PlatFormIconList";
+import useGameDetails from "@/hooks/useGameDetails";
 
 interface Props {
   game: Game;
@@ -27,6 +28,9 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
     base: "full",
     md: "cover",
   } as ConditionalValue<{}>);
+
+  const { data } = useGameDetails(game.id);
+
   return (
     <DialogRoot
       open={isOpen}
@@ -54,7 +58,7 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
                 <CriticScore score={game.metacritic} />
               </DataList.ItemValue>
               <DataList.ItemLabel>Description</DataList.ItemLabel>
-              <DataList.ItemValue>Game description</DataList.ItemValue>
+              <DataList.ItemValue>{data?.description}</DataList.ItemValue>
               <DataList.ItemLabel>Release Date</DataList.ItemLabel>
               <DataList.ItemValue>{game.released}</DataList.ItemValue>
               <DataList.ItemLabel>Platforms</DataList.ItemLabel>
