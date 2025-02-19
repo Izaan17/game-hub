@@ -1,4 +1,4 @@
-import { Button, Icon } from "@chakra-ui/react";
+import { Box, Button, Icon } from "@chakra-ui/react";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -21,26 +21,28 @@ const ItemPerPageSelector = ({
   );
 
   return (
-    <MenuRoot>
-      <MenuTrigger>
-        <Button variant="outline" size="sm">
-          Results per page: {currentItemsPerPage?.label || 20}
-          <Icon as={BsChevronDown as React.ElementType}></Icon>
-        </Button>
-      </MenuTrigger>
-      <MenuContent>
-        {itemsPerPage.map((numberPerPage) => (
-          <MenuItem
-            key={numberPerPage.label}
-            value={numberPerPage.value}
-            onClick={() => onItemsPerPageSelect(numberPerPage.value)}
-            cursor={"pointer"}
-          >
-            {numberPerPage.label}
-          </MenuItem>
-        ))}
-      </MenuContent>
-    </MenuRoot>
+    <Box width={{ base: "100%", md: "auto" }}>
+      <MenuRoot>
+        <MenuTrigger>
+          <Button variant="outline" size="sm">
+            Results per page: {currentItemsPerPage?.label || 20}
+            <Icon as={BsChevronDown as React.ElementType}></Icon>
+          </Button>
+        </MenuTrigger>
+        <MenuContent>
+          {itemsPerPage.map((numberPerPage) => (
+            <MenuItem
+              key={numberPerPage.label}
+              value={numberPerPage.value}
+              onClick={() => onItemsPerPageSelect(numberPerPage.value)}
+              cursor={"pointer"}
+            >
+              {numberPerPage.label}
+            </MenuItem>
+          ))}
+        </MenuContent>
+      </MenuRoot>
+    </Box>
   );
 };
 

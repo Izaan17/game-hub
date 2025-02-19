@@ -1,5 +1,5 @@
 import usePlatforms from "@/hooks/usePlatforms";
-import { Button, Icon } from "@chakra-ui/react";
+import { Box, Button, Icon } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
 import {
@@ -20,26 +20,28 @@ const PlatFormSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   if (error) return null;
 
   return (
-    <MenuRoot>
-      <MenuTrigger>
-        <Button variant="outline" size="sm">
-          {selectedPlatform?.name || "Platforms"}
-          <Icon as={BsChevronDown as React.ElementType}></Icon>
-        </Button>
-      </MenuTrigger>
-      <MenuContent>
-        {data.map((platform) => (
-          <MenuItem 
-            key={platform.id}
-            value={platform.name}
-            onClick={() => onSelectPlatform(platform)}
-            cursor={"pointer"}
-          >
-            {platform.name}
-          </MenuItem>
-        ))}
-      </MenuContent>
-    </MenuRoot>
+    <Box width={{ base: "100%", md: "auto" }}>
+      <MenuRoot>
+        <MenuTrigger>
+          <Button variant="outline" size="sm">
+            {selectedPlatform?.name || "Platforms"}
+            <Icon as={BsChevronDown as React.ElementType}></Icon>
+          </Button>
+        </MenuTrigger>
+        <MenuContent>
+          {data.map((platform) => (
+            <MenuItem
+              key={platform.id}
+              value={platform.name}
+              onClick={() => onSelectPlatform(platform)}
+              cursor={"pointer"}
+            >
+              {platform.name}
+            </MenuItem>
+          ))}
+        </MenuContent>
+      </MenuRoot>
+    </Box>
   );
 };
 
