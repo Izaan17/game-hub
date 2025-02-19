@@ -1,13 +1,12 @@
 import {
   DialogBody,
   DialogCloseTrigger,
-  DialogContent,
   DialogHeader,
   DialogRoot,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Game } from "@/hooks/useGames";
-import { DataList } from "@chakra-ui/react";
+import { DataList, DataListRoot, DialogContent } from "@chakra-ui/react";
 
 interface Props {
   game: Game;
@@ -24,7 +23,7 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
           <DialogCloseTrigger />
         </DialogHeader>
         <DialogBody>
-          <DataList.Root>
+          <DataListRoot>
             <DataList.Item key={game.id}>
               <DataList.ItemLabel>Game Name</DataList.ItemLabel>
               <DataList.ItemValue>{game.name}</DataList.ItemValue>
@@ -33,7 +32,7 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
               <DataList.ItemLabel>Game Score</DataList.ItemLabel>
               <DataList.ItemValue>{game.metacritic}</DataList.ItemValue>
             </DataList.Item>
-          </DataList.Root>
+          </DataListRoot>
         </DialogBody>
       </DialogContent>
     </DialogRoot>
