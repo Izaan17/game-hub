@@ -7,7 +7,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Game } from "@/hooks/useGames";
-import { DataList, HStack, Image } from "@chakra-ui/react";
+import {
+  ConditionalValue,
+  DataList,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import ImageCarousel from "./ImageCarousel";
 import CriticScore from "./CriticScore";
 
@@ -18,11 +22,15 @@ interface Props {
 }
 
 const GameShowCase = ({ game, isOpen, onClose }: Props) => {
+  const size = useBreakpointValue({
+    base: "full",
+    md: "cover",
+  } as ConditionalValue<{}>);
   return (
     <DialogRoot
       open={isOpen}
       onOpenChange={onClose}
-      size="cover"
+      size={size}
       scrollBehavior="inside"
     >
       <DialogContent>
@@ -44,8 +52,6 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
               <DataList.ItemValue>
                 <CriticScore score={game.metacritic} />
               </DataList.ItemValue>
-              {/* <DataList.ItemLabel>Game Description</DataList.ItemLabel>
-              <DataList.ItemValue>{game.description}</DataList.ItemValue> */}
             </DataList.Item>
           </DataList.Root>
         </DialogBody>
