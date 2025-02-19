@@ -1,7 +1,7 @@
-import { Input } from "@chakra-ui/react";
+import { Icon, Input } from "@chakra-ui/react";
 import { InputGroup } from "@/components/ui/input-group";
 import { LuSearch } from "react-icons/lu";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 interface Props {
   onSearch: (search: string) => void;
@@ -16,7 +16,10 @@ const SearchInput = ({ onSearch }: Props) => {
         if (ref.current) onSearch(ref.current.value);
       }}
     >
-      <InputGroup startElement={<LuSearch />} width="100%">
+      <InputGroup
+        startElement={<Icon as={LuSearch as React.ElementType}></Icon>}
+        width="100%"
+      >
         <Input
           ref={ref}
           borderRadius={20}

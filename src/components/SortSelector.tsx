@@ -30,7 +30,7 @@ const SortSelector = ({ selectedSortOrder, onSelectSortOrder }: Props) => {
       <MenuTrigger asChild>
         <Button variant="outline" size="sm">
           Order by: {currentSortOrder?.label || "Relevance"}
-          <Icon as={BsChevronDown}></Icon>
+          <Icon as={BsChevronDown as React.ElementType}></Icon>
         </Button>
       </MenuTrigger>
       <MenuContent width={1}>
