@@ -8,7 +8,7 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@/components/ui/menu";
-import { Platform } from "@/hooks/useGames";
+import { Platform } from "@/hooks/usePlatforms";
 
 interface Props {
   selectedPlatform: Platform | null;

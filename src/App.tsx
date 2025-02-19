@@ -2,8 +2,6 @@ import {
   Box,
   Grid,
   GridItem,
-  Heading,
-  HStack,
   Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -13,7 +11,7 @@ import GenreList from "./components/GenreList";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatFormSelector from "./components/PlatFormSelector";
-import { Platform } from "./hooks/useGames";
+import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 import ItemPerPageSelector from "./components/ItemPerPageSelector";
