@@ -22,16 +22,15 @@ const ItemPerPageSelector = ({
 
   return (
     <MenuRoot>
-      <MenuTrigger asChild>
+      <MenuTrigger>
         <Button variant="outline" size="sm">
           Results per page: {currentItemsPerPage?.label || 20}
           <Icon as={BsChevronDown}></Icon>
         </Button>
       </MenuTrigger>
-      <MenuContent width={1}>
+      <MenuContent>
         {itemsPerPage.map((numberPerPage) => (
           <MenuItem
-            key={numberPerPage.label}
             value={numberPerPage.value}
             onClick={() => onItemsPerPageSelect(numberPerPage.value)}
             cursor={"pointer"}
