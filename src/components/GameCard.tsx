@@ -25,7 +25,14 @@ const GameCard = ({ game, onClick }: Props) => {
           />
           <CriticScore score={game.metacritic} />
         </HStack>
-        <Heading fontSize="2xl">{game.name}</Heading>
+        <Heading
+          fontSize="2xl"
+          textOverflow="ellipsis"
+          overflow="hidden"
+          whiteSpace="nowrap"
+        >
+          {game.name}
+        </Heading>
       </Card.Body>
     </Card.Root>
   );
