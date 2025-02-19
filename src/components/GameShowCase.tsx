@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import ImageCarousel from "./ImageCarousel";
 import CriticScore from "./CriticScore";
+import PlatFormIconList from "./PlatFormIconList";
 
 interface Props {
   game: Game;
@@ -51,6 +52,18 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
               <DataList.ItemLabel>Game Score</DataList.ItemLabel>
               <DataList.ItemValue>
                 <CriticScore score={game.metacritic} />
+              </DataList.ItemValue>
+              <DataList.ItemLabel>Description</DataList.ItemLabel>
+              <DataList.ItemValue>Game description</DataList.ItemValue>
+              <DataList.ItemLabel>Release Date</DataList.ItemLabel>
+              <DataList.ItemValue>{game.released}</DataList.ItemValue>
+              <DataList.ItemLabel>Platforms</DataList.ItemLabel>
+              <DataList.ItemValue>
+                <PlatFormIconList
+                  platforms={game.parent_platforms.map(
+                    (platforms) => platforms.platform
+                  )}
+                />
               </DataList.ItemValue>
             </DataList.Item>
           </DataList.Root>
