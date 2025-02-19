@@ -5,11 +5,9 @@ import {
   DialogHeader,
   DialogRoot,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Game } from "@/hooks/useGames";
 import { DataList } from "@chakra-ui/react";
-import { ReactNode } from "react";
 
 interface Props {
   game: Game;

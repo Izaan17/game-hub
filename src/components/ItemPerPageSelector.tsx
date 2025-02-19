@@ -1,4 +1,4 @@
-import { Button, Icon } from "@chakra-ui/react";
+import { Button, Icon, IconButton, Text } from "@chakra-ui/react";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -23,10 +23,10 @@ const ItemPerPageSelector = ({
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <Button variant="outline" size="sm">
-          Results per page: {currentItemsPerPage?.label || 20}
-          <Icon as={BsChevronDown}></Icon>
-        </Button>
+        <IconButton variant="outline" size="sm">
+          <Text>Results per page: {currentItemsPerPage?.label || 20}</Text>
+          <BsChevronDown />
+        </IconButton>
       </MenuTrigger>
       <MenuContent width={1}>
         {itemsPerPage.map((numberPerPage) => (

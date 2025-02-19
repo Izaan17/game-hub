@@ -1,10 +1,8 @@
 import useGames from "@/hooks/useGames";
-import { Alert, SimpleGrid, Text } from "@chakra-ui/react";
-import GameCard from "./GameCard";
+import { Alert, SimpleGrid } from "@chakra-ui/react";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { GameQuery } from "@/App";
-import GameCardShowCase from "./GameCardShowCase";
 import GameCardWithShowCase from "./GameCardWithShowcase";
 
 interface Props {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Game } from "@/hooks/useGames";
 import GameCard from "./GameCard";
-import GameShowCase from "./GameCardShowCase";
+import GameShowCase from "./GameShowCase";
 
 interface Props {
   game: Game;
