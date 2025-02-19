@@ -35,7 +35,7 @@ const PlatFormIconList = ({ platforms }: Props) => {
       {platforms.map((platform) => (
         <Icon
           key={platform.id}
-          as={iconMap[platform.slug] || BsGlobe}
+          as={(iconMap[platform.slug] || BsGlobe) as React.ElementType}
           color="gray.500"
         />
       ))}

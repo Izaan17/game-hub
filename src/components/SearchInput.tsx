@@ -1,4 +1,4 @@
-import { HStack, Input } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
 import { InputGroup } from "@/components/ui/input-group";
 import { LuSearch } from "react-icons/lu";
 import { useRef } from "react";
