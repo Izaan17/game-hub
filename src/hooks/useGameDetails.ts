@@ -1,10 +1,7 @@
 import useFetch from "./useFetch";
 
 export interface GameDetailsResponse {
-  id: number;
-  name: string;
   description: string;
-  rating: number;
 }
 
 const useGameDetails = (id: number) =>
