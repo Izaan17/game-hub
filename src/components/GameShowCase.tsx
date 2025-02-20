@@ -31,6 +31,13 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
 
   const { data } = useGameDetails(game.id);
 
+  const dataListItems = [
+    { label: "Name", value: game.name },
+    { label: "ID", value: game.id },
+    { label: "Description", value: data?.description.replace(/<[^>]+>/g, "") },
+    { label: "Release Date", value: game.released },
+  ];
+
   return (
     <DialogRoot
       open={isOpen}
@@ -47,28 +54,26 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
           <ImageCarousel
             images={game.short_screenshots.map((ss) => ss.image)}
           />
-          <DataList.Root>
-            <DataList.Item key={game.id}>
-              <DataList.ItemLabel>Game Name</DataList.ItemLabel>
-              <DataList.ItemValue>{game.name}</DataList.ItemValue>
-              <DataList.ItemLabel>Game ID</DataList.ItemLabel>
-              <DataList.ItemValue>{game.id}</DataList.ItemValue>
+          <DataList.Root divideY="5px">
+            {dataListItems.map((item) => (
+              <DataList.Item key={item.label} pt="4">
+                <DataList.ItemLabel>{item.label}</DataList.ItemLabel>
+                <DataList.ItemValue>{item.value}</DataList.ItemValue>
+              </DataList.Item>
+            ))}
+            <DataList.Item pt="4">
               <DataList.ItemLabel>Game Score</DataList.ItemLabel>
               <DataList.ItemValue>
                 <CriticScore score={game.metacritic} />
               </DataList.ItemValue>
-              <DataList.ItemLabel>Description</DataList.ItemLabel>
-              <DataList.ItemValue>{data?.description}</DataList.ItemValue>
-              <DataList.ItemLabel>Release Date</DataList.ItemLabel>
-              <DataList.ItemValue>{game.released}</DataList.ItemValue>
-              <DataList.ItemLabel>Platforms</DataList.ItemLabel>
-              <DataList.ItemValue>
-                <PlatFormIconList
-                  platforms={game.parent_platforms.map(
-                    (platforms) => platforms.platform
-                  )}
-                />
-              </DataList.ItemValue>
+            </DataList.Item>
+            <DataList.Item pt="4">
+              <DataList.ItemLabel>Available On</DataList.ItemLabel>
+              <PlatFormIconList
+                platforms={game.parent_platforms.map(
+                  (platforms) => platforms.platform
+                )}
+              />
             </DataList.Item>
           </DataList.Root>
         </DialogBody>
