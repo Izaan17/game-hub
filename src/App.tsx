@@ -1,9 +1,4 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Stack } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
@@ -57,7 +52,11 @@ function App() {
         >
           <GenreList
             selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            onSelectGenre={(genre) => {
+              // If the selected genre is the same as the current one, set genre to null
+              const newGenre = gameQuery?.genre === genre ? null : genre;
+              setGameQuery({ ...gameQuery, genre: newGenre });
+            }}
           />
         </Box>
       </GridItem>
