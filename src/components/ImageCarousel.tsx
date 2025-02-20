@@ -55,6 +55,7 @@ const ImageCarousel = ({ images }: Props) => {
               objectFit="cover"
               width="fit-content"
               height="fit-content"
+              cursor='pointer'
             />
           </Box>
         ))}
