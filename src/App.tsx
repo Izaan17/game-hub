@@ -120,7 +120,7 @@ function App() {
         </Box>
         <GameGrid
           gameQuery={gameQuery}
-          games={games.values().toArray()}
+          games={Array.from(games.values())}
           isLoading={isLoading}
           error={error}
         />
