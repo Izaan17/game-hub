@@ -3,7 +3,6 @@ import {
   Grid,
   GridItem,
   Stack,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
@@ -26,7 +25,6 @@ export interface GameQuery {
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-  const isMobile = useBreakpointValue({ base: true, lg: false });
 
   return (
     <Grid
