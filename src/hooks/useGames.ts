@@ -10,7 +10,7 @@ export interface Game {
   metacritic: number;
   short_screenshots: { image: string }[];
   released: string;
-  genres: {name: string}[];
+  genres: { name: string }[];
 }
 
 interface GamesResponse {
@@ -28,6 +28,7 @@ const useGames = (gameQuery: GameQuery) =>
         ordering: gameQuery.sortOrder,
         search: gameQuery.searchText,
         page_size: gameQuery.itemsPerPage,
+        page: gameQuery.page,
       },
     },
     [gameQuery]
