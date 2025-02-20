@@ -26,7 +26,6 @@ export interface GameQuery {
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-  const isMobile = useBreakpointValue({ base: true, lg: false });
 
   return (
     <Grid
