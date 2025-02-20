@@ -2,11 +2,6 @@ import { GameQuery } from "@/App";
 import useFetch from "./useFetch";
 import { Platform } from "./usePlatforms";
 
-interface GamesResponse<T> {
-  count: number;
-  results: T[];
-}
-
 export interface Game {
   id: number;
   name: string;
@@ -17,8 +12,13 @@ export interface Game {
   released: string;
 }
 
+interface GamesResponse {
+  count: number;
+  results: Game[];
+}
+
 const useGames = (gameQuery: GameQuery) =>
-  useFetch<GamesResponse<Game>>(
+  useFetch<GamesResponse>(
     "/games",
     {
       params: {
