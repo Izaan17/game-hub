@@ -7,13 +7,6 @@ export interface GameDetailsResponse {
   rating: number;
 }
 
-export interface GameDetails {
-  id: number;
-  name: string;
-  description: string;
-  rating: number;
-}
-
 const useGameDetails = (id: number) =>
   useFetch<GameDetailsResponse>(`/games/${id}`, {}, [id]);
 
