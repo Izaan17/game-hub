@@ -35,7 +35,22 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
     { label: "Name", value: game.name },
     { label: "Description", value: data?.description.replace(/<[^>]+>/g, "") },
     { label: "Release Date", value: game.released },
+    {
+      label: "Genres",
+      value: game.genres.map((genre) => genre.name).join(" "),
+    },
     { label: "ID", value: game.id },
+    { label: "Metacritic", value: <CriticScore score={game.metacritic} /> },
+    {
+      label: "Available On",
+      value: (
+        <PlatFormIconList
+          platforms={game.parent_platforms.map(
+            (platforms) => platforms.platform
+          )}
+        />
+      ),
+    },
   ];
 
   return (
@@ -61,20 +76,6 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
                 <DataList.ItemValue>{item.value}</DataList.ItemValue>
               </DataList.Item>
             ))}
-            <DataList.Item pt="4">
-              <DataList.ItemLabel>Game Score</DataList.ItemLabel>
-              <DataList.ItemValue>
-                <CriticScore score={game.metacritic} />
-              </DataList.ItemValue>
-            </DataList.Item>
-            <DataList.Item pt="4">
-              <DataList.ItemLabel>Available On</DataList.ItemLabel>
-              <PlatFormIconList
-                platforms={game.parent_platforms.map(
-                  (platforms) => platforms.platform
-                )}
-              />
-            </DataList.Item>
           </DataList.Root>
         </DialogBody>
       </DialogContent>

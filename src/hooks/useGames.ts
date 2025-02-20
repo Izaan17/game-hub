@@ -10,6 +10,7 @@ export interface Game {
   metacritic: number;
   short_screenshots: { image: string }[];
   released: string;
+  genres: {name: string}[];
 }
 
 interface GamesResponse {
