@@ -16,6 +16,9 @@ const GameCard = ({ game, onClick }: Props) => {
       overflow="hidden"
       cursor="pointer"
       onClick={onClick}
+      _hover={{
+        border: "2px solid gray",
+      }}
     >
       <Image src={getCroppedImageUrl(game.background_image)} />
       <Card.Body>
