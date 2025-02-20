@@ -33,7 +33,7 @@ const GameShowCase = ({ game, isOpen, onClose }: Props) => {
 
   const dataListItems = [
     { label: "Name", value: game.name },
-    { label: "Description", value: data?.description.replace(/<[^>]+>/g, "") },
+    { label: "Description", value: data?.description_raw},
     { label: "Release Date", value: game.released },
     {
       label: "Genres",
